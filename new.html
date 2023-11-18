@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LANDING PAGE</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="j.js">
+  <link rel="shortcut icon" href="Your paragraph text.png" type="image/x-icon">
+</head>
+<body>
+    <div>#navigation bar section
+        <nav class="nav_bar">
+            <ul>
+                <li><a href="#sec1">Home</a></li>
+                <li><a href="#sec2">INFO</a></li>
+                <li><a href="#sec3">LOGIN</a></li>
+            </ul>
+        </nav>
+    </div>
+<div id="sec1">#flex tab section
+      <div class="panels">
+        <div class="panel panel1">
+          <p>our</p>
+          <p>immersive</p>
+          <p>Future</p>
+        </div>
+        <div class="panel panel2">
+          <p>Live Audieces</p>
+          <p>WITH</p>
+          <p>Real People</p>
+        </div>
+        <div class="panel panel3">
+          <p>Let's</p>
+          <p>Experience</p>
+          <p>the Future</p>
+        </div>
+        <div class="panel panel4">
+          <p>Give</p>
+          <p>All</p>
+          <p>You can</p>
+        </div>
+        <div class="panel panel5">
+          <p>Explore</p>
+          <p>the</p>
+          <p>new world</p>
+        </div>
+      </div>
+</div>
+<div id="sec2">#info section
+    <h1 id="head">
+        Augmented reality (AR)
+    </h1>
+    <p id="info">
+        Augmented reality (AR) is an interactive experience that combines the real world and computer-generated content. The content can span multiple sensory modalities, including visual, auditory, haptic, somatosensory and olfactory.AR can be defined as a system that incorporates three basic features: a combination of real and virtual worlds, real-time interaction, and accurate 3D registration of virtual and real objects.
+        <br>
+        <br><br>
+        Augmented reality (AR) differs from virtual reality (VR) in the sense that in AR part of the surrounding environment is 'real' and AR is just adding layers of virtual objects to the real environment. On the other hand, in VR the surrounding environment is completely virtual and computer generated.
+    </p>
+ 
+</div>
+<div id="sec3">#login section
+    <div class="cont">
+
+        <div class="form-box">
+
+            <h1 id="title">Sign in</h1>
+
+            <form>
+
+                <div class="input-grp">
+                    
+                    <div class="inp-field" id="name">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" placeholder="Username">
+                    </div>
+
+                    <div class="inp-field">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="Email">
+                    </div>
+
+                    <div class="inp-field">
+                        <i class="fa-solid fa-lock fa-shake"></i>
+                        <input type="password" placeholder="password">
+                    </div>
+                    <p>Forgot Password <a href="#" id="Forgot">Click Here!!</a></p>
+
+                </div>
+
+                <div class="btn-field">
+                    <button type="button" id="signupBtn">Sign Up</button>
+                    <button type="button" id="signinBtn" class="disable">Sign In</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      console.log('Hello');
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      console.log(e.propertyName);
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+  </script>
+  <script>
+
+    let signupBtn = document.getElementById("signupBtn")
+    let signinBtn = document.getElementById("signinBtn")
+    let name = document.getElementById("name")
+    let title = document.getElementById("title")
+    
+    
+    signinBtn.onclick = function(){
+        name.style.maxHeight = "0"
+        title.innerHTML="Sign In";
+        signupBtn.classList.add("disable");
+        signinBtn.classList.remove("disable");
+    
+    }
+    signupBtn.onclick=function(){
+        name.style.maxHeight = "60px"
+        title.innerHTML="Sign Up";
+        signinBtn.classList.add("disable");
+        signupBtn.classList.remove("disable");
+    
+    }
+    </script>
+
+</body>
+</html>
